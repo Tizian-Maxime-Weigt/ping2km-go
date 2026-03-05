@@ -10,7 +10,7 @@
 ![Built With Love](https://img.shields.io/badge/built%20with-%E2%9D%A4%20by%20DeuZa-red?style=plastic)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/DeuZa42?style=social)](https://x.com/DeuZa42)
 
-# ping2km
+# ping2km fork in golang
 
 **Ping with estimated distance based on the speed of light ... because why not? :D**
 
