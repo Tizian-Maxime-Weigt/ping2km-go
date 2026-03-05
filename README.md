@@ -165,28 +165,4 @@ It was revived, corrected, made portable, and properly documented in March 2026.
 [![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png)](http://www.wtfpl.net/)    
 
 ## Author
-DeuZa<a href="https://github.com/deuza"> root@deuza.bzh
-
-## TODO       
-
-Nothing planned
-
-## BUGS
-
-Should not work under Solaris and with exotic ping outputs.     
-The output line that is parsed should look like this:
-
-```
-$ ping www.deuza.net
-PING www.deuza.net (66.6.44.4) 56(84) bytes of data.
-64 bytes from 66.6.44.4: icmp_seq=1 ttl=52 time=92.8 ms
-64 bytes from 66.6.44.4: icmp_seq=2 ttl=52 time=96.1 ms
-^C
---- www.deuza.net ping statistics ---
-2 packets transmitted, 2 received, 0% packet loss, time 1001ms
-rtt min/avg/max/mdev = 92.836/94.470/96.105/1.634 ms
-root@pi5:~#
-
-```
-
-<p align="center">With ❤️ by <a href="https://github.com/deuza">DeuZa</a></p></sup></sub>
+DeuZa<a href="https://github.com/deuza"> root@deuza.bzh 
