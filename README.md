@@ -1,20 +1,21 @@
-[![GitHub last commit](https://img.shields.io/github/v/release/deuza/ping2km?style=plastic)](https://github.com/deuza/ping2km/commits/main)
-![GitHub Release Date](https://img.shields.io/github/release-date/deuza/ping2km)
-[![GitHub last commit](https://img.shields.io/github/last-commit/deuza/ping2km?style=plastic)](https://github.com/deuza/ping2km/commits/main)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/deuza/ping2km)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/deuza/ping2km)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Tizian-Maxime-Weigt/ping2km-go?style=plastic)](https://github.com/Tizian-Maxime-Weigt/ping2km-go/releases)
+![GitHub Release Date](https://img.shields.io/github/release-date/Tizian-Maxime-Weigt/ping2km-go)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Tizian-Maxime-Weigt/ping2km-go?style=plastic)](https://github.com/Tizian-Maxime-Weigt/ping2km-go/commits/main)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Tizian-Maxime-Weigt/ping2km-go)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Tizian-Maxime-Weigt/ping2km-go)
 [![License: CC0](https://img.shields.io/badge/license-CC0_1.0-lightgrey.svg?style=plastic)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![License: WTFPL](https://img.shields.io/badge/license-WTFPL_2.0-lightgrey.svg?style=plastic)](https://www.wtfpl.net/)
+![Go Version](https://img.shields.io/badge/go-%3E%3D1.21-blue?style=plastic&logo=go)
 
 ![Hack The Planet](https://img.shields.io/badge/hack-the--planet-black?style=flat-square\&logo=gnu\&logoColor=white)
 ![Built With Love](https://img.shields.io/badge/built%20with-%E2%9D%A4%20by%20DeuZa-red?style=plastic)
 [![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/DeuZa42?style=social)](https://x.com/DeuZa42)
 
-# ping2km fork in golang
+# ping2km-go
 
 **Ping with estimated distance based on the speed of light ... because why not? :D**
 
-The shell script `ping2km` is a humorous tool that runs a continuous ping to a host and estimates the "as the fibre flies" distance based on the Round Trip Time (RTT).
+`ping2km-go` is a Go rewrite of the original `ping2km` shell script. It runs a continuous ping to a host and estimates the "as the fibre flies" distance based on the Round Trip Time (RTT). No dependencies beyond a standard Go toolchain and the system `ping` binary.
 
 ![ping2km screenshot](screenshot.png)
 
@@ -63,14 +64,27 @@ The actual distance traveled by packets is always greater than the geographical 
 
 ## Installation
 
+### Using `go install`
+
 ```sh
-curl -O https://raw.githubusercontent.com/deuza/ping2km/main/ping2km.sh
-mv ping2km.sh ping2km
-chmod +x ping2km
+go install github.com/Tizian-Maxime-Weigt/ping2km-go@latest
+```
+
+The binary will be placed in `$GOPATH/bin` (or `$HOME/go/bin` by default). Make sure that directory is in your `$PATH`.
+
+### Build from source
+
+```sh
+git clone https://github.com/Tizian-Maxime-Weigt/ping2km-go.git
+cd ping2km-go
+go build -o ping2km .
 sudo cp ping2km /usr/local/bin/
 ```
 
-On Debian/Ubuntu, `bc` might need to be installed : `apt install bc`
+### Requirements
+
+- Go 1.21 or later
+- The system `ping` binary must be available in `$PATH`
 
 ## Usage
 
@@ -84,13 +98,13 @@ Hit `Ctrl+C` to stop, a statistics summary will be displayed, including RTT and 
 
 ## Compatibility
 
-Tested on :
+Tested on:
 
 - Debian GNU/Linux (Bookworm, Trixie) arm64/amd64
 - FreeBSD 13.x / 14.x
 - macOS (Darwin) Ventura, Sonoma, Sequoia
 
-The script uses strictly POSIX `sed`, POSIX shell arithmetic `$((...))`, and `bc` for floating point, just KISS.
+Requires Go 1.21+ and the system `ping` binary. No external Go dependencies — the standard library is all that is needed.
 
 ## Examples
 
@@ -137,8 +151,9 @@ ping2km: nope.invalid: Name or service not known
 
 ## History
 
-This script was created around 2002 on Solaris/FreeBSD at Club-Internet on 36 lines.      
+The original `ping2km` shell script was created around 2002 on Solaris/FreeBSD at Club-Internet in 36 lines.
 It was revived, corrected, made portable, and properly documented in March 2026.
+This Go rewrite (`ping2km-go`) was created in March 2026, preserving the same behavior and output format as the original script.
 
 ## License
 
