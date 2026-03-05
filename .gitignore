@@ -4,3 +4,6 @@ ping2km-go
 
 # Go build cache
 /vendor/
+
+# Release artifacts
+/dist/

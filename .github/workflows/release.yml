@@ -1,0 +1,37 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build binaries
+        run: |
+          mkdir -p dist
+          GOOS=linux   GOARCH=amd64 go build -o dist/ping2km-linux-amd64      ./cmd/ping2km/
+          GOOS=linux   GOARCH=arm64 go build -o dist/ping2km-linux-arm64      ./cmd/ping2km/
+          GOOS=darwin  GOARCH=amd64 go build -o dist/ping2km-darwin-amd64     ./cmd/ping2km/
+          GOOS=darwin  GOARCH=arm64 go build -o dist/ping2km-darwin-arm64     ./cmd/ping2km/
+          GOOS=windows GOARCH=amd64 go build -o dist/ping2km-windows-amd64.exe ./cmd/ping2km/
+          GOOS=freebsd GOARCH=amd64 go build -o dist/ping2km-freebsd-amd64    ./cmd/ping2km/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
