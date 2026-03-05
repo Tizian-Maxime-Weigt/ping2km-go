@@ -70,22 +70,6 @@ chmod +x ping2km
 sudo cp ping2km /usr/local/bin/
 ```
 
-If curl is not available, you can use another tool such as wget to retrieve the script directly.
-
-```sh
-wget https://raw.githubusercontent.com/deuza/ping2km/main/ping2km.sh
-``` 
-
-## Dependencies
-
-Standard POSIX utilities, nothing exotic :
-
-- `ping`
-- `grep`
-- `sed`
-- `bc`
-- `printf`
-
 On Debian/Ubuntu, `bc` might need to be installed : `apt install bc`
 
 ## Usage
