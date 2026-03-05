@@ -7,10 +7,6 @@
 [![License: WTFPL](https://img.shields.io/badge/license-WTFPL_2.0-lightgrey.svg?style=plastic)](https://www.wtfpl.net/)
 ![Go Version](https://img.shields.io/badge/go-%3E%3D1.21-blue?style=plastic&logo=go)
 
-![Hack The Planet](https://img.shields.io/badge/hack-the--planet-black?style=flat-square\&logo=gnu\&logoColor=white)
-![Built With Love](https://img.shields.io/badge/built%20with-%E2%9D%A4%20by%20DeuZa-red?style=plastic)
-[![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/DeuZa42?style=social)](https://x.com/DeuZa42)
-
 # ping2km-go
 
 **Ping with estimated distance based on the speed of light ... because why not? :D**
