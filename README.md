@@ -80,7 +80,6 @@ sudo cp ping2km /usr/local/bin/
 ### Requirements
 
 - Go 1.21 or later
-- The system `ping` binary must be available in `$PATH`
 
 ## Usage
 
